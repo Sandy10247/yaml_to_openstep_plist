@@ -15,7 +15,7 @@ pip install yaml_to_openstep_plist
 The library provides two main functions:
 
 - `to_plist(yaml_data)`: Convert a Python object (parsed from YAML) to an OpenStep plist string.
-- `to_yaml_file(yaml_file_path, plist_file_path)`: Convert a YAML file to an OpenStep plist file.
+- `to_plist_file(yaml_file_path, plist_file_path)`: Convert a YAML file to an OpenStep plist file.
 
 ### Example
 
@@ -23,7 +23,7 @@ The library provides two main functions:
 import yaml_to_openstep_plist
 
 # Convert YAML file to OpenStep plist file
-yaml_to_openstep_plist.to_yaml_file("input.yaml", "output.plist")
+yaml_to_openstep_plist.to_plist_file("input.yaml", "output.plist")
 
 # Convert YAML data to OpenStep plist string
 yaml_data = {
@@ -77,6 +77,23 @@ surveyLocalizationEnableMapping = {
 ## Requirements
 - Python 3.6 or higher
 - PyYAML (>=5.1)
+
+## Publishing to PyPI
+To publish this package to PyPI:
+1. Create a PyPI account at https://pypi.org.
+2. Install `build` and `twine`:
+   ```bash
+   pip install build twine
+   ```
+3. Run the build script:
+   ```bash
+   python build.py --upload pypi
+   ```
+   Or for TestPyPI:
+   ```bash
+   python build.py --upload testpypi
+   ```
+4. Follow prompts for PyPI credentials or use a `~/.pypirc` file with an API token.
 
 ## License
 MIT

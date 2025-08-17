@@ -1,6 +1,7 @@
 import yaml
 from datetime import datetime
 
+
 def to_openstep_plist(data, indent=0, indent_size=1):
     """Convert Python data to OpenStep plist string with proper indentation."""
     def format_indent(level):
@@ -51,6 +52,7 @@ def to_openstep_plist(data, indent=0, indent_size=1):
         return f"{key_str} = {value_str};"
     return format_value(data, indent, is_value_side=True)
 
+
 def to_plist(yaml_data):
     """Convert YAML data (Python object) to OpenStep plist string."""
     try:
@@ -58,7 +60,7 @@ def to_plist(yaml_data):
     except Exception as e:
         raise ValueError(f"Failed to convert YAML data to OpenStep plist: {str(e)}")
 
-def to_yaml_file(yaml_file_path, plist_file_path):
+def to_plist_file(yaml_file_path, plist_file_path):
     """Convert YAML file to OpenStep plist file."""
     try:
         # Read and parse the YAML file
